@@ -19,7 +19,7 @@ function Result() {
 
   // CSV読み込み（1回だけ）
   useEffect(() => {
-    Papa.parse("/public/spotlight.csv", {
+    Papa.parse("spotlight.csv", {
       download: true,
       header: true,
       complete: (result) => {
