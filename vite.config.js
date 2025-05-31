@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: '/travel-picker-copy/',
+  base: '/travel-picker-test/',
   plugins: [react()],
   server: {
     proxy: {
