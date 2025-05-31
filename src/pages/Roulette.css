@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+.roulette-container {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.roulette-body {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.pointer {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 20px solid red; /* ← 赤い三角形 */
+  z-index: 10;
+}
+
+.spinning-wheel {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  margin: 3rem auto;
+  transition: transform 1.5s ease-out;
+  
+  background: conic-gradient(
+    red 0deg 30deg,
+    orange 30deg 60deg,
+    yellow 60deg 90deg,
+    lime 90deg 120deg,
+    green 120deg 150deg,
+    teal 150deg 180deg,
+    blue 180deg 210deg,
+    indigo 210deg 240deg,
+    violet 240deg 270deg,
+    pink 270deg 300deg,
+    gold 300deg 330deg,
+    crimson 330deg 360deg
+  );
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg); /* 3回転して止まる */
+  }
+}
