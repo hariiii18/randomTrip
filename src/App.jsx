@@ -5,7 +5,7 @@ import Roulette from './pages/Roulette';
 import Result from './pages/Result';
 import Detail from './pages/Detail';
 
-function App() {
+export default function App() {
     return (
       <Routes>
         <Route path='/' element={<Home />} />
@@ -16,5 +16,5 @@ function App() {
       </Routes>
     );
   }
-export default App;
+
 
