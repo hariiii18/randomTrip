@@ -56,15 +56,26 @@ export default function Detail() {
         </a>
 
       {/* LINEでシェアするリンク（新たに追加） */}
-      <a
-        href={`https://line.me/R/msg/text/?${shareText}%0A${shareUrl}`} // 新たに追加
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LINEでシェア
-      </a>
+        <a
+          href={`https://line.me/R/msg/text/?${shareText}%0A${shareUrl}`} // 新たに追加
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LINEでシェア
+        </a>
       </div>
 
+      {/* <div>
+      <h3>教えて下さい！あなたが行った中で思い出に残った旅行先</h3>
+      <p>あなたが行った中で一番記憶に残った旅行先を教えて下さい</p>
+      <p>入力いただいた旅行先はランダム旅行先の候補先として追加します</p>
+
+      <p>都道府県：<input type="text" /></p>
+      <p>観光スポット：<input type="text" /></p>
+      <button>送信</button>
+      </div> */}
     </div>
+
+
   );
 }

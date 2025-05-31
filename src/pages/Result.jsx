@@ -87,6 +87,7 @@ function Result() {
 
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
+      <a href="/" alt="ラントリトップページ" font-color="black">ラントリ</a>
       <h2>選ばれたのは...</h2>
       <h1 style={{ fontSize: "2.5rem", margin: "1rem 0" }}>
         {selectedSpot
@@ -159,6 +160,24 @@ function Result() {
       >
         ここに決定
       </button>
+
+      {selectedSpot && (
+        <div style={{ marginTop: "1.5rem" }}>
+          <a
+            href={`https://www.instagram.com/explore/tags/${encodeURIComponent(selectedSpot.spot)}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              padding: "0.6rem 1.2rem",
+              backgroundColor: "white",
+              color: "black",
+              textDecoration: "none",
+            }}
+          >
+            Instagramで{selectedSpot.spot}について調べる
+          </a>
+        </div>
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Roulette.css'
 
+
 function Roulette() {
   const navigate = useNavigate();
   const location = useLocation(); // ← React Router の location（ややこしい）

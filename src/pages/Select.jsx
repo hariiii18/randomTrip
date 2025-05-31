@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
+
 const prefectures = [
   "北海道",
   "青森県",
@@ -74,6 +76,7 @@ function SelectPage() {
 
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
+      <a href="/" alt="ラントリトップページ" font-color="black">ラントリ</a>
       <h2>旅行をはじめる前に…</h2>
 
       {/* 都道府県のセレクトボックス */}
