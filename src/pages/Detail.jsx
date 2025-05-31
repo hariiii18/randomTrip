@@ -31,7 +31,7 @@ export default function Detail() {
 
 
   const shareText = encodeURIComponent(`${name} の ${spot} が選ばれました✈️`);
-  const shareUrl  = encodeURIComponent(window.location.href);
+  const shareUrl  = encodeURIComponent(window.location.origin + "/");
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
       <h2>目的地：{spot}</h2>
