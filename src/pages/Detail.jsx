@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 export default function Detail() {
   const location = useLocation();
   console.log("Detail location.state:", location.state);
-  const {name, spot} = location.state || {};
+  const { name, spot } = location.state || {};
 
   const [jalanUrl, setJalanUrl] = useState("");
 
   useEffect(() => {
     if (!name || !spot) return;
-    
+
     const keyword = `${name} ${spot}`;
     // ※ローカル版
     // Vite の proxy (/api → localhost:4000) を通す
@@ -19,47 +19,56 @@ export default function Detail() {
     //   `/api/encode-keyword?name=${encodeURIComponent(name)}&spot=${encodeURIComponent(spot)}`,
     //   { cache: 'no-store' }
     // )
-      // .then(res => {
-      //   console.log('raw status', res.status);
-      //   return res.json();
-      // })
-      // .then(data => {
-      //   console.log('got data', data);
-      //   setJalanUrl(data.url);
-      // })
-      // .catch(console.error);
+    // .then(res => {
+    //   console.log('raw status', res.status);
+    //   return res.json();
+    // })
+    // .then(data => {
+    //   console.log('got data', data);
+    //   setJalanUrl(data.url);
+    // })
+    // .catch(console.error);
 
-      // ※サイト版
-      const baseUrl = 'https://www.jalan.net/uw/uwp2011/uww2011init.do';
+    // ※サイト版
+    // Shift_JISにエンコード
+    const sjisArray = Encoding.stringToCode(keyword);
+    const sjisBuffer = Encoding.convert(sjisArray, "SJIS", "UNICODE");
+    const sjisEncoded = sjisBuffer
+      .map((b) => "%" + b.toString(16).toUpperCase().padStart(2, "0"))
+      .join("");
+
+    const baseUrl = "https://www.jalan.net/uw/uwp2011/uww2011init.do";
     const params = new URLSearchParams({
-      keyword: keyword,
-      distCd: '06',
-      rootCd: '7701',
-      screenId: 'FWPCTOP',
-      ccnt: 'button-fw',
-      image1: ''
+      keyword: "sjisEncoded",
+      distCd: "06",
+      rootCd: "7701",
+      screenId: "FWPCTOP",
+      ccnt: "button-fw",
+      image1: "",
     });
     const url = `${baseUrl}?${params.toString()}`;
     setJalanUrl(url);
-    }, [name, spot])
+  }, [name, spot]);
 
-
-  const shareText = encodeURIComponent(`あなたの行き先は ${name} の ${spot} が選ばれました✈️`);
-  const shareUrl  = encodeURIComponent("https://hariiii18.github.io/randomTrip/");
+  const shareText = encodeURIComponent(
+    `あなたの行き先は ${name} の ${spot} に選ばれました✈️`
+  );
+  const shareUrl = encodeURIComponent(
+    "https://hariiii18.github.io/randomTrip/"
+  );
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
       <h2>目的地：{spot}</h2>
-      {jalanUrl
-        ? (
-          <a href={jalanUrl} target="_blank" rel="noopener noreferrer">
-            じゃらんで詳しく見る →
-          </a>
-        )
-        : <p>リンクを準備中…</p>
-      }
+      {jalanUrl ? (
+        <a href={jalanUrl} target="_blank" rel="noopener noreferrer">
+          じゃらんで詳しく見る →
+        </a>
+      ) : (
+        <p>リンクを準備中…</p>
+      )}
 
       <div>
-      {/* X（旧Twitter）でシェアするリンク */}
+        {/* X（旧Twitter）でシェアするリンク */}
         <a
           href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
           target="_blank"
@@ -69,7 +78,7 @@ export default function Detail() {
           Xでシェア
         </a>
 
-      {/* LINEでシェアするリンク（新たに追加） */}
+        {/* LINEでシェアするリンク（新たに追加） */}
         <a
           href={`https://line.me/R/msg/text/?${shareText}%0A${shareUrl}`} // 新たに追加
           target="_blank"
@@ -89,7 +98,5 @@ export default function Detail() {
       <button>送信</button>
       </div> */}
     </div>
-
-
   );
 }
