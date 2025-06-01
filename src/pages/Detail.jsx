@@ -38,15 +38,15 @@ export default function Detail() {
       .join("");
 
     const baseUrl = "https://www.jalan.net/uw/uwp2011/uww2011init.do";
-    const params = new URLSearchParams({
-      keyword: "sjisEncoded",
-      distCd: "06",
-      rootCd: "7701",
-      screenId: "FWPCTOP",
-      ccnt: "button-fw",
-      image1: "",
-    });
-    const url = `${baseUrl}?${params.toString()}`;
+    const params =
+      `keyword=${sjisEncoded}` +
+      `&distCd=06` +
+      `&rootCd=7701` +
+      `&screenId=FWPCTOP` +
+      `&ccnt=button-fw` +
+      `&image1=`;
+
+    const url = `${baseUrl}?${params}`;
     setJalanUrl(url);
   }, [name, spot]);
 
