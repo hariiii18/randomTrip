@@ -11,7 +11,7 @@ export default function Detail() {
 
   useEffect(() => {
     if (!name || !spot) return;
-
+    const keyword = `${name} ${spot}`;
     // ※ローカル版
     // Vite の proxy (/api → localhost:4000) を通す
     // fetch(
