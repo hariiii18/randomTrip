@@ -126,7 +126,7 @@ function Result() {
           />
         </div>
       ) : (
-        <p>画像を読み込み中...</p>
+        <p>画像入手不可</p>
       )}
 
       <p style={{ marginTop: "1.5rem" }}>

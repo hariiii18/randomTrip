@@ -11,6 +11,7 @@ export default function Detail() {
 
   useEffect(() => {
     if (!name || !spot) return;
+    
     const keyword = `${name} ${spot}`;
     // ※ローカル版
     // Vite の proxy (/api → localhost:4000) を通す
@@ -43,7 +44,7 @@ export default function Detail() {
     }, [name, spot])
 
 
-  const shareText = encodeURIComponent(`${name} の ${spot} が選ばれました✈️`);
+  const shareText = encodeURIComponent(`あなたの行き先は ${name} の ${spot} が選ばれました✈️`);
   const shareUrl  = encodeURIComponent("https://hariiii18.github.io/randomTrip/");
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
