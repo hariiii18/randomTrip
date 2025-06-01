@@ -135,7 +135,7 @@ function SelectPage() {
       </div> */}
 
       {/* 選択確認 */}
-      {currentLocation && regions && (
+      {regions && (
         <p>
           選択中の現在地：<strong>{currentLocation}</strong>
           <br />

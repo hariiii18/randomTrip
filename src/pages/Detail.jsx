@@ -12,21 +12,34 @@ export default function Detail() {
   useEffect(() => {
     if (!name || !spot) return;
 
+    // ※ローカル版
     // Vite の proxy (/api → localhost:4000) を通す
-    fetch(
-      `/api/encode-keyword?name=${encodeURIComponent(name)}&spot=${encodeURIComponent(spot)}`,
-      { cache: 'no-store' }
-    )
+    // fetch(
+    //   `/api/encode-keyword?name=${encodeURIComponent(name)}&spot=${encodeURIComponent(spot)}`,
+    //   { cache: 'no-store' }
+    // )
+      // .then(res => {
+      //   console.log('raw status', res.status);
+      //   return res.json();
+      // })
+      // .then(data => {
+      //   console.log('got data', data);
+      //   setJalanUrl(data.url);
+      // })
+      // .catch(console.error);
 
-      .then(res => {
-        console.log('raw status', res.status);
-        return res.json();
-      })
-      .then(data => {
-        console.log('got data', data);
-        setJalanUrl(data.url);
-      })
-      .catch(console.error);
+      // ※サイト版
+      const baseUrl = 'https://www.jalan.net/uw/uwp2011/uww2011init.do';
+    const params = new URLSearchParams({
+      keyword: keyword,
+      distCd: '06',
+      rootCd: '7701',
+      screenId: 'FWPCTOP',
+      ccnt: 'button-fw',
+      image1: ''
+    });
+    const url = `${baseUrl}?${params.toString()}`;
+    setJalanUrl(url);
     }, [name, spot])
 
 
