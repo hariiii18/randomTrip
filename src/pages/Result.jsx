@@ -87,7 +87,7 @@ function Result() {
 
   return (
     <div style={{ textAlign: "center", padding: "2rem" }}>
-      <a href="/" alt="ラントリトップページ" font-color="black">ラントリ</a>
+      <a href="/travel-picker-copy" alt="ラントリトップページ" font-color="black">ラントリ</a>
       <h2>選ばれたのは...</h2>
       <h1 style={{ fontSize: "2.5rem", margin: "1rem 0" }}>
         {selectedSpot
