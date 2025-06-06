@@ -12,7 +12,7 @@ export default function Reason() {
           ✈️ラントリ
         </a>
       </header>
-      <div class="container">
+      <div className="container">
         <h1 style={{ fontSize: "32px", textAlign: "center" }}>
           みんなにも新しい地点にいって刺激をもらってほしい
         </h1>
@@ -49,11 +49,14 @@ export default function Reason() {
           </p>
         </div>
       </div>
-      <Link to="/select">
-        <button style={{ padding: '1rem 2rem', fontSize: '1.2rem', justifyContent: 'center', margin: '32px auto' }}>
-          ランダムで旅行先を選ぶ
-        </button>
-      </Link>
+      <div style={{ margin: '32px auto', textAlign: 'center', }}>
+        <Link to="/select">
+          <button style={{ padding: '1rem 2rem', fontSize: '1.2rem', }}>
+            ランダムで旅行先を選ぶ
+          </button>
+        </Link>
+      </div>
+
     </div>
   );
 }

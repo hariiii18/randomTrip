@@ -65,7 +65,7 @@ export default function Detail() {
     mission === "自由行動"
       ? `https://twitter.com/intent/tweet?text=${shareText}%0A${shareUrl}`
       : `https://twitter.com/intent/tweet?text=${shareText}%0A${encodeURIComponent(
-        `${spot}で「${mission}」に挑戦します！`
+        `${spot}周辺で「${mission}」に挑戦します！`
         )}%0A${shareUrl}`;
 
   return (
