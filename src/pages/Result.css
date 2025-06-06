@@ -8,6 +8,16 @@
   flex-wrap: wrap;
 }
 
+.image-with-note {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央寄せしたい場合 */
+}
+
+.map-media-wrapper iframe {
+  object-fit: cover;
+}
+
 .place-image,
 .place-map {
   width: 600px;
@@ -21,16 +31,21 @@
   max-width: 100%;
 }
 
-@media (max-width: 1343px) {
+.mission-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 
+@media () {
+
   .map-media-wrapper {
     flex-direction: column;
   }
 
-  .place-image,
   .place-map {
-    width: 100%;
+    width: 600px;
     height: 200px;
-    height: auto;
-    max-width: 100%;
   }
-}
+} */

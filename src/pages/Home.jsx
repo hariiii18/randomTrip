@@ -10,6 +10,8 @@ function Home() {
           ランダムで旅行先を選ぶ
         </button>
       </Link>
+      <br />
+      <Link to="/reason" style={{ fontSize: "1rem", color: "#646cff" }}>このサイトを作った理由</Link>
     </div>
   );
 }

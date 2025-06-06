@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import "./Select.css"
 
 
 
@@ -75,8 +76,8 @@ function SelectPage() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
-      <a href="/travel-picker-copy" alt="ラントリトップページ" font-color="black">ラントリ</a>
+    <div style={{ textAlign:"center", width: "100%" }}>
+      <header><a href="/travel-picker-copy/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header>
       <h2>旅行をはじめる前に…</h2>
 
       {/* 都道府県のセレクトボックス */}

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function Detail() {
   const location = useLocation();
   console.log("Detail location.state:", location.state);
-  const { name, spot } = location.state || {};
+  const { name, spot, mission } = location.state || {};
 
   const [jalanUrl, setJalanUrl] = useState("");
 
@@ -56,9 +56,28 @@ export default function Detail() {
   const shareUrl = encodeURIComponent(
     "https://hariiii18.github.io/randomTrip/"
   );
+
+  const shareMission = encodeURIComponent(
+    `${spot}で「${mission}」に挑戦します！`
+  );
+
+  const tweetHref =
+    mission === "自由行動"
+      ? `https://twitter.com/intent/tweet?text=${shareText}%0A${shareUrl}`
+      : `https://twitter.com/intent/tweet?text=${shareText}%0A${encodeURIComponent(
+        `${spot}で「${mission}」に挑戦します！`
+        )}%0A${shareUrl}`;
+
   return (
-    <div style={{ textAlign: "center", padding: "2rem" }}>
+    <div style={{ textAlign: "center" }}>
+      <header><a href="/travel-picker-copy/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header>
       <h2>目的地：{spot}</h2>
+      {mission === "自由行動" ? (
+        <p>自由行動！思い思いに散策してみてください！</p>
+      ) : (
+        <p>ミッション：{mission}</p>
+      )}
+
       {jalanUrl ? (
         <a href={jalanUrl} target="_blank" rel="noopener noreferrer">
           じゃらんで詳しく見る →
@@ -67,16 +86,18 @@ export default function Detail() {
         <p>リンクを準備中…</p>
       )}
 
+      
+
       <div>
         {/* X（旧Twitter）でシェアするリンク */}
-        <a
-          href={`https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`}
+          <a
+          href={tweetHref}
           target="_blank"
           rel="noopener noreferrer"
           style={{ marginRight: "1rem" }}
-        >
-          Xでシェア
-        </a>
+          >
+            Xでシェア
+          </a>
 
         {/* LINEでシェアするリンク（新たに追加） */}
         <a
