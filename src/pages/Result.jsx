@@ -141,7 +141,7 @@ function Result() {
 
   return (
     <div style={{ textAlign: "center"}}>
-      <header><a href="/travel-picker-copy/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header>
+      <header><a href="/randomTrip/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header>
       <h2>選ばれたのは...</h2>
       <h1 style={{ fontSize: "2.5rem", margin: "1rem 0" }}>
         {selectedSpot

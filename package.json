@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
 
-  "homepage": "https://github.com/hariiii18/travel-picker-copy.git",
+  "homepage": "https://github.com/hariiii18/randomTrip.git",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
