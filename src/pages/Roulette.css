@@ -56,3 +56,10 @@
     transform: rotate(1080deg); /* 3回転して止まる */
   }
 }
+
+@media (width >= 600px) {
+  .spinning-wheel {
+    width: auto;
+    height: auto;
+  }
+}

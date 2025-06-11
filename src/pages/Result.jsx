@@ -157,7 +157,7 @@ function Result() {
                 src={imageUrl}
                 alt={selectedSpot.spot}
                 style={{
-                  width: "600px",
+                  width: "100%",
                   height: "400px",
                   objectFit: "cover",
                   borderRadius: "12px",
