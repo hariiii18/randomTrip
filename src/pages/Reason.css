@@ -1,12 +1,32 @@
 @charset "utf-8";
 
-@media(width <= 600px) {
-  .container h1 {
-    font-size: 16px;
-  }
+.container {
+  padding: 0 1rem;         /* サイドに余白をつくる */
+}
 
-  .container p {
-    width: 100%;
-    font-size: 9px;
+.container h1 {
+  font-size: 24px;
+}
+
+.reason-text {
+  max-width: 800px;      
+  margin: 0 auto;          
+  font-size: 1.1rem;      
+  line-height: 1.6;        
+  word-break: break-word; 
+}
+
+/* 小さな画面では文字を少し小さく */
+@media (max-width: 800px) {
+  .reason-text {
+    font-size: 0.95rem;
+    padding: 0 0.5rem;
+  }
+}
+
+/* もっと小さい画面 (スマホ) */
+@media (max-width: 500px) {
+  .reason-text {
+    font-size: 0.9rem;
   }
 }

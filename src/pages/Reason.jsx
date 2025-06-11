@@ -14,10 +14,10 @@ export default function Reason() {
         </a>
       </header>
       <div className="container">
-        <h1 style={{ fontSize: "24px", textAlign: "center" }}>
+        <h1 style={{ textAlign: "center", }}>
           みんなにも新しい地点にいって刺激をもらってほしい
         </h1>
-        <div style={{ width: "100vh", margin: "0 auto", fontSize: "18px" }}>
+        <div className="reason-text">
           <p style={{ marginBottom: "1rem" }}>
             その思いでこのサイトを作りました！<br />
             きっかけは大学４年生のとき、１ヶ月かけてひとりでヨーロッパを周遊したときのこと。<br />
