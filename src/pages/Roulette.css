@@ -57,9 +57,8 @@
   }
 }
 
-@media (width >= 600px) {
+@media (width <= 600px) {
   .spinning-wheel {
-    width: auto;
-    height: auto;
+    size: 100px;
   }
 }

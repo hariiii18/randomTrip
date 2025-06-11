@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+@media(width <= 600px) {
+  .container h1 {
+    font-size: 16px;
+  }
+
+  .container p {
+    width: 100%;
+    font-size: 9px;
+  }
+}

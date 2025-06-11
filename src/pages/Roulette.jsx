@@ -36,7 +36,7 @@ function Roulette() {
       <div className='roulette-body'>
         <div className='pointer' />
         <div className="spinning-wheel"
-          style={{ transform: `rotate(${rotation}deg)` }}
+          style={{ transform: `rotate(${rotation}deg)`, }}
         />
       </div>
     </div>

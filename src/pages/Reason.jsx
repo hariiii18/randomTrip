@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./Reason.css";
 
 export default function Reason() {
   return (
@@ -13,7 +14,7 @@ export default function Reason() {
         </a>
       </header>
       <div className="container">
-        <h1 style={{ fontSize: "32px", textAlign: "center" }}>
+        <h1 style={{ fontSize: "24px", textAlign: "center" }}>
           みんなにも新しい地点にいって刺激をもらってほしい
         </h1>
         <div style={{ width: "100vh", margin: "0 auto", fontSize: "18px" }}>
