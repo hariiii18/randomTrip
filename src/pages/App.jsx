@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/index';
-import Select from './pages/Select';
-import Roulette from './pages/Roulette';
-import Result from './pages/Result';
-import Detail from './pages/Detail';
-import Reason from './pages/Reason';
+import Home from './index';
+import Select from './Select';
+import Roulette from './Roulette';
+import Result from './Result';
+import Detail from './Detail';
+import Reason from './Reason';
 
 export default function App() {
     return (
