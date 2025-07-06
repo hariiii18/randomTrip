@@ -2,6 +2,8 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+const PIXABAY_API_KEY = '50356379-59c32b1069edcc860059ac8af'
+
 export default function Detail() {
   const location = useLocation();
   console.log("Detail location.state:", location.state);
@@ -95,6 +97,7 @@ export default function Detail() {
           target="_blank"
           rel="noopener noreferrer"
           style={{ marginRight: "1rem" }}
+          background=''
           >
             Xでシェア
           </a>

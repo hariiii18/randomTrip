@@ -11,6 +11,7 @@ export default function Reason() {
           font-color="black"
         >
           ✈️ラントリ
+          
         </a>
       </header>
       <div className="container">
