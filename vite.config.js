@@ -8,6 +8,14 @@ export default defineConfig({
   optimizeDeps: {
     include: ['react-router-dom']
   },
+  build: {
+    rollupOptions: {
+      external: [],
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
   server: {
     proxy: {
       '/api': {
