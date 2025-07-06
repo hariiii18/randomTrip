@@ -6,7 +6,7 @@
   "homepage": "https://hariiii18.github.io/randomTrip",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production",
+    "build": "vite build --mode production --outDir dist",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -23,6 +23,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
+    "esbuild": "^0.21.5",
     "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",

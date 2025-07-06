@@ -9,6 +9,8 @@ export default defineConfig({
     include: ['react-router-dom']
   },
   build: {
+    target: 'es2015',
+    minify: 'esbuild',
     rollupOptions: {
       external: [],
       output: {

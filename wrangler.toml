@@ -1,0 +1,13 @@
+[build]
+command = "npm run build"
+watch_dir = "src"
+
+[build.upload]
+format = "service-worker"
+
+[env.production]
+name = "randomTrip"
+route = "hariiii18.github.io/randomTrip/*"
+
+[env.production.build]
+command = "npm run build" 
