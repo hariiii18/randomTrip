@@ -6,7 +6,7 @@
   "homepage": "https://hariiii18.github.io/randomTrip",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --mode production --outDir dist",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

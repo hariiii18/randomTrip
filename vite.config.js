@@ -5,18 +5,9 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   base: '/randomTrip/',
   plugins: [react()],
-  optimizeDeps: {
-    include: ['react-router-dom']
-  },
   build: {
     target: 'es2015',
-    minify: 'esbuild',
-    rollupOptions: {
-      external: [],
-      output: {
-        manualChunks: undefined
-      }
-    }
+    minify: 'esbuild'
   },
   server: {
     proxy: {
