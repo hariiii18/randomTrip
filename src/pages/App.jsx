@@ -8,14 +8,16 @@ import Reason from './Reason';
 
 export default function App() {
     return (
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/select' element={<Select />} />
-        <Route path='/roulette' element={<Roulette />} />
-        <Route path='/result' element={<Result />} />
-        <Route path='/detail' element={<Detail />} />
-        <Route path='/reason' element={<Reason />} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/select' element={<Select />} />
+          <Route path='/roulette' element={<Roulette />} />
+          <Route path='/result' element={<Result />} />
+          <Route path='/detail' element={<Detail />} />
+          <Route path='/reason' element={<Reason />} />
+        </Routes>
+      </div>
     );
   }
 

@@ -6,7 +6,7 @@ export default function Reason() {
     <div>
       <header style={{ textAlign: "center" }}>
         <a
-          href="/randomTrip/"
+          href="/"
           alt="ラントリトップページ"
           font-color="black"
         >
