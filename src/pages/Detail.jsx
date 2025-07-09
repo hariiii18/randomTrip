@@ -72,7 +72,6 @@ export default function Detail() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      {/* <header><a href="/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header> */}
       <h2>目的地：{spot}</h2>
       {mission === "自由行動" ? (
         <p>自由行動！思い思いに散策してみてください！</p>
