@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 function Home() {
   return (
     <div style={{ textAlign: 'center', marginTop: '5rem', justifyContent: 'center'}}>
-      <h1>ようこそ！<br />ラントリへ</h1>
-      <p>さぁまだ見ぬ場所へ</p>
+      <h1 style={{ fontSize: '35px' }}>ようこそ<br />ラントリへ！</h1>
+      <h2 style={{ fontSize: '25px' }}>さぁまだ見ぬ場所へ出かけよう！</h2>
       <Link to="/select">
         <button style={{ padding: '1rem 2rem', fontSize: '1.2rem'}}>
           ランダムで旅行先を選ぶ

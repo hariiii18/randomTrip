@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-    <link rel="icon" type="" href="" />
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="" href="/public/ラントリトップ画像.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ランダムで旅行先が決まるサイト！</title>
-</head>
-<body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <script src="https://cdn.jsdelivr.net/npm/encoding-japanese/encoding.min.js"></script>
-</body>
+    <title>ランダムで旅行先が決まるサイト！</title>
+  </head>
+
+  <body>
+    <nav class="menu navbar navbar-light">
+      <div class="container">
+        <div class="w-75 d-flex">
+          <div class="cursor-pointer">
+            <a class="hover_title" href="/">RIN TOOLS</a>
+            <a class="hover_title" href="/">ラントリ</a>
+          </div>
+        </div>
+        <!-- <button class="btn btn-outline-primary">
+          <span class="navbar-toggler-icon"></span>
+        </button> -->
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+        <script src="https://cdn.jsdelivr.net/npm/encoding-japanese/encoding.min.js"></script>
+      </div>
+    </nav>
+  </body>
 </html>

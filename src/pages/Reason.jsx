@@ -4,7 +4,7 @@ import "./Reason.css";
 export default function Reason() {
   return (
     <div>
-      <header style={{ textAlign: "center" }}>
+      {/* <header style={{ textAlign: "center" }}>
         <a
           href="/"
           alt="ラントリトップページ"
@@ -13,7 +13,7 @@ export default function Reason() {
           ✈️ラントリ
           
         </a>
-      </header>
+      </header> */}
       <div className="container">
         <h1 style={{ textAlign: "center", }}>
           みんなにも新しい地点にいって刺激をもらってほしい

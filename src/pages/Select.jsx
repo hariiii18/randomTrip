@@ -77,8 +77,8 @@ function SelectPage() {
 
   return (
     <div style={{ textAlign:"center", width: "100%" }}>
-      <header><a href="/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header>
-      <h2>旅行をはじめる前に…</h2>
+      {/* <header><a href="/" alt="ラントリトップページ" font-color="black">✈️ラントリ</a></header> */}
+      <h2 style={{ fontSize: '24px' }}>旅行をはじめる前に…</h2>
 
       {/* 都道府県のセレクトボックス */}
       <div style={{ marginBottom: "1.5rem" }}>
@@ -146,7 +146,7 @@ function SelectPage() {
 
       {/* スタートボタン（仮） */}
       <button
-        disabled={!currentLocation || !selectedRegion}
+        disabled={!selectedRegion}
         onClick={() => {
           navigate("/roulette", {
             state: {
