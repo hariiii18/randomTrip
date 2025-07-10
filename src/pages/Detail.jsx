@@ -15,41 +15,52 @@ export default function Detail() {
     if (!name || !spot) return;
 
     const keyword = `${name} ${spot}`;
-    // ※ローカル版
-    // Vite の proxy (/api → localhost:4000) を通す
-    // fetch(
-    //   `/api/encode-keyword?name=${encodeURIComponent(name)}&spot=${encodeURIComponent(spot)}`,
-    //   { cache: 'no-store' }
-    // )
-    // .then(res => {
-    //   console.log('raw status', res.status);
-    //   return res.json();
-    // })
-    // .then(data => {
-    //   console.log('got data', data);
-    //   setJalanUrl(data.url);
-    // })
-    // .catch(console.error);
+    
+    // 環境に応じてAPIエンドポイントを選択
+    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    
+    if (isLocalhost) {
+      // ローカル版：Vite の proxy (/api → localhost:4000) を通す
+      fetch(
+        `/api/encode-keyword?name=${encodeURIComponent(name)}&spot=${encodeURIComponent(spot)}`,
+        { cache: 'no-store' }
+      )
+      .then(res => {
+        console.log('raw status', res.status);
+        return res.json();
+      })
+      .then(data => {
+        console.log('got data', data);
+        setJalanUrl(data.url);
+      })
+      .catch(console.error);
+    } else {
+      // 本番版：クライアントサイドでエンコード
+      try {
+        const sjisArray = Encoding.stringToCode(keyword);
+        const sjisBuffer = Encoding.convert(sjisArray, "SJIS", "UNICODE");
+        const sjisEncoded = sjisBuffer
+          .map((b) => "%" + b.toString(16).toUpperCase().padStart(2, "0"))
+          .join("");
 
-    // ※サイト版
-    // Shift_JISにエンコード
-    const sjisArray = Encoding.stringToCode(keyword);
-    const sjisBuffer = Encoding.convert(sjisArray, "SJIS", "UNICODE");
-    const sjisEncoded = sjisBuffer
-      .map((b) => "%" + b.toString(16).toUpperCase().padStart(2, "0"))
-      .join("");
+        const baseUrl = "https://www.jalan.net/uw/uwp2011/uww2011init.do";
+        const params =
+          `keyword=${sjisEncoded}` +
+          `&distCd=06` +
+          `&rootCd=7701` +
+          `&screenId=FWPCTOP` +
+          `&ccnt=button-fw` +
+          `&image1=`;
 
-    const baseUrl = "https://www.jalan.net/uw/uwp2011/uww2011init.do";
-    const params =
-      `keyword=${sjisEncoded}` +
-      `&distCd=06` +
-      `&rootCd=7701` +
-      `&screenId=FWPCTOP` +
-      `&ccnt=button-fw` +
-      `&image1=`;
-
-    const url = `${baseUrl}?${params}`;
-    setJalanUrl(url);
+        const url = `${baseUrl}?${params}`;
+        setJalanUrl(url);
+      } catch (error) {
+        console.error('エンコードエラー:', error);
+        // フォールバック：エンコードなしでURL生成
+        const fallbackUrl = `https://www.jalan.net/uw/uwp2011/uww2011init.do?keyword=${encodeURIComponent(keyword)}&distCd=06&rootCd=7701&screenId=FWPCTOP&ccnt=button-fw&image1=`;
+        setJalanUrl(fallbackUrl);
+      }
+    }
   }, [name, spot]);
 
   const shareText = encodeURIComponent(
