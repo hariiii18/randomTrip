@@ -262,21 +262,22 @@ function Result() {
       </button>
 
       {selectedSpot && (
-        <div style={{ margin: "1.5rem", }}>
-          <a
+        <div style={{ marginTop: "1.5rem" }}>
+          <button
             href={`https://www.instagram.com/explore/tags/${encodeURIComponent(selectedSpot.spot)}/`}
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              padding: "0.6rem 1.2rem",
+              padding: "1rem",
               backgroundColor: "#1a1a1a",
               color: "white",
               textDecoration: "none",
-              borderRadius: "8px"
+              borderRadius: "8px",
+              marginBottom: "2rem",
             }}
           >
             Instagramで{selectedSpot.spot}について調べる
-          </a>
+          </button>
         </div>
       )}
     </div>

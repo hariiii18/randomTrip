@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .container {
-  padding: 0 1rem;         /* サイドに余白をつくる */
+  padding: 0;         /* サイドに余白をつくる */
 }
 
 .container h1 {
@@ -20,7 +20,7 @@
 @media (max-width: 800px) {
   .reason-text {
     font-size: 0.95rem;
-    padding: 0 0.5rem;
+    padding: 0;
   }
 }
 
