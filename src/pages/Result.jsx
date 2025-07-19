@@ -264,14 +264,16 @@ function Result() {
       {selectedSpot && (
         <div style={{ marginTop: "1.5rem" }}>
           <button
-            href={`https://www.instagram.com/explore/tags/${encodeURIComponent(selectedSpot.spot)}/`}
-            target="_blank"
+            onClick={() => {
+              window.open(`https://www.instagram.com/explore/tags/${encodeURIComponent(selectedSpot.spot)}/`, "_blank");
+            }}
             rel="noopener noreferrer"
             style={{
               padding: "1rem",
               backgroundColor: "#1a1a1a",
-              color: "white",
               textDecoration: "none",
+              color: "white",
+              display: "inline-block",
               borderRadius: "8px",
               marginBottom: "2rem",
             }}
