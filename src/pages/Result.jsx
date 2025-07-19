@@ -213,7 +213,7 @@ function Result() {
             marginTop: "2rem",
           }}>
             <button
-            style={{ marginRight: "1rem", }}
+            style={{ marginRight: "1rem", color: "white", }}
             onClick={() => {
               navigate("/detail", {
                 state: {
@@ -228,7 +228,7 @@ function Result() {
               ミッションを受け取る
             </button>
             <button
-            style={{ marginTop: "1rem", }}
+            style={{ marginTop: "1rem", color: "white", }}
             onClick={() => {
               navigate("/detail", {
                 state: {
@@ -246,7 +246,7 @@ function Result() {
       )}
 
       <button
-      style={{ marginTop: "1.5rem", }}
+      style={{ marginTop: "1.5rem", color: "white", }}
         onClick={() => {
           localStorage.removeItem("randomSpot");
           navigate("/roulette", {

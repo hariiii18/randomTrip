@@ -53,7 +53,7 @@ export default function Reason() {
       </div>
       <div style={{ margin: '32px auto', textAlign: 'center', }}>
         <Link to="/select">
-          <button style={{ padding: '1rem 2rem', fontSize: '1.2rem', }}>
+          <button style={{ padding: '1rem 2rem', fontSize: '1.2rem', color: "white", }}>
             ランダムで旅行先を選ぶ
           </button>
         </Link>
