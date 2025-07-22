@@ -11,7 +11,11 @@ function Home() {
         </button>
       </Link>
       <br />
-      <Link to="/reason" style={{ fontSize: "1rem", color: "#646cff" }}>このサイトを作った理由</Link>
+      <Link to="/reason">
+        <button style={{ fontSize: "1rem", color: "#646cff", marginTop: "1rem", color: "white" }}>
+          このサイトを作った理由
+        </button>
+      </Link>
     </div>
   );
 }
