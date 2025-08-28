@@ -30,7 +30,7 @@ const missions = [
 ];
 
 function Result() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //ページに移るときにデータを渡すときに使用
   const routerLocation = useLocation();
   const region = routerLocation.state?.region;
   const currentLocation = routerLocation.state?.location;
@@ -45,6 +45,10 @@ function Result() {
   const [acceptedMission, setAcceptedMission] = useState(null);
 
   // CSV読み込み（1回だけ）
+  // useEffectの主な役割         useEffect(第1引数:実行したい関数, 第2引数:[依存配列（値が変わったときだけ再実行)])
+  // ・データの取得
+  // ・イベントリスナーの登録
+  // ・ローカルストレージの読み書き
   useEffect(() => {
     Papa.parse("spotlight.csv", {
       download: true,
@@ -96,7 +100,7 @@ function Result() {
     console.log("選出されたスポット:", randomSpot);
     setSelectedSpot(randomSpot);
     localStorage.setItem("randomSpot", JSON.stringify(randomSpot));
-  }, [region, exclude, spots]);
+  }, [region, exclude, spots ]);  // 条件等を元に該当スポットをランダムで抽出
 
   // --- スポット＆ミッションを選ぶ useEffect の中 ---
   useEffect(() => {
